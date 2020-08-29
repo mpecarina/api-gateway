@@ -1,0 +1,48 @@
+{
+  "name": "@mpecarina/api-gateway",
+  "version": "0.1.0",
+  "description": "api gateway",
+  "keywords": [
+    "api",
+    "gateway",
+    "typescript",
+    "nodejs"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist/ && ./node_modules/typescript/bin/tsc && ./node_modules/prettier/bin-prettier.js --write dist/**/*.js",
+    "mock": "psql -U $DB_USER -d $DB_NAME -h $DB_HOST -c 'CREATE TABLE tokens(google_id VARCHAR PRIMARY KEY NOT NULL, name TEXT NOT NULL, data JSON NOT NULL);' | true",
+    "mockdev": "PGPASSWORD=password DB_HOST=localhost DB_USER=postgres DB_NAME=postgres yarn mock",
+    "dev": "nodemon --watch 'src/**/*.ts' --watch 'sevice_definitions/*.yaml' --watch 'types/*.d.ts' --exec './node_modules/ts-node/dist/bin.js' src/index.ts",
+    "lint": "./node_modules/eslint/bin/eslint.js src/**/*.ts --fix && ./node_modules/prettier/bin-prettier.js --write src/**/*.ts",
+    "publish:cd": "yarn lint && yarn build && yarn publish --new-version $npm_package_version",
+    "release:patch": "yarn lint && yarn build && release patch",
+    "release:minor": "yarn lint && yarn build && release minor",
+    "release:major": "yarn lint && yarn build && release major",
+    "start": "node dist/index.js",
+    "test": "jest test/unit --verbose --passWithNoTests"
+  },
+  "author": "mpecarina",
+  "license": "MIT",
+  "dependencies": {
+    "@mpecarina/koa-template": "^1.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.4",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.0.5",
+    "release-script": "^1.0.2",
+    "ts-node": "^8.10.1",
+    "tslint": "^6.1.2",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.9.3"
+  }
+}

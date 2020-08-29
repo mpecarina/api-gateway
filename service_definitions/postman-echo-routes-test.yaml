@@ -1,0 +1,30 @@
+- name: postman-echo
+  origin:
+    - localhost
+    - "localhost:3000"
+  description: ""
+  controller: ""
+  handler: ""
+  routes:
+    - "/:path*"
+  method:
+    - get
+    - post
+    - put
+    - patch
+    - delete
+    - trace
+    - options
+  auth:
+    sso: false
+  proxy:
+    enabled: true
+    raw: true
+    redirect: false
+    url: https://postman-echo.com
+    filter:
+      enabled: true
+      find: https://postman-echo.com
+      replace: http://localhost:3000
+      fields:
+        - url

@@ -1,0 +1,14 @@
+node_modules
+src
+tests
+api-gateway-master*
+.prettierrc.js
+tsconfig.json
+tslint.json
+Dockerfile
+docker-compose.*
+.editorconfig
+.bumpversion.cfg
+.eslintrc.js
+yarn.lock
+auth*.json
