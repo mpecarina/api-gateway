@@ -474,10 +474,10 @@
   dependencies:
     vary "^1.1.2"
 
-"@mpecarina/koa-template@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@mpecarina/koa-template/-/koa-template-1.9.0.tgz#55584925647e74f671513357ea3c5503d10df8a8"
-  integrity sha512-yO5QpVxXyXbNdRKxsy/GEyKkRG9XFr8apYHrRtt0suSB8WbeE8B6nWBmtq9YO9JaP2wvEOlkudQr/fkpO8WjTA==
+"@mpecarina/koa-template@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@mpecarina/koa-template/-/koa-template-1.9.1.tgz#f1661e23fb6bf55699a41b76f3506b36df0622a6"
+  integrity sha512-54IVhKzIsqMGR1m2+TjCrJRK8E/X1n3rPVrf6Z7+LZgnpodeYys6Tc3U8iYXReytfX2onZOPh/1nNMEhJK17VQ==
   dependencies:
     "@koa/cors" "^3.1.0"
     axios "^0.19.2"

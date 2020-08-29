@@ -1,0 +1,14 @@
+- name: hello-world
+  origin:
+    - "127.0.0.1"
+    - "127.0.0.1:3000"
+  controller: "example"
+  handler: "hello"
+  routes:
+    - "/example/hello"
+  method:
+    - get
+  auth:
+    sso: false
+  proxy:
+    enabled: false
